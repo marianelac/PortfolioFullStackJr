@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/*.example-card {
+    max-width: 50rem;
+    max-height: 27rem;
+    padding: 10px auto;
+    
+  } */
+  
+  .main-image{
+      margin: 10px auto;
+      padding: auto;
+      width:55vw;
+      height: 15vw;
+      
+      
+   
+      
+  }
+  
+  .example-header-image {
+    /*background-image: url('https://i.imgur.com/x50TQcM.jpg'); */
+    background-size: cover;
+    position: absolute;
+    top: 27%;
+    left: 40%;
+  }
+.mat-card-avatar{
+    width: 10vw;
+    height: 10vw;
+    border: solid #ffffff;
+}
+#bio{
+    
+    text-align: center;
+}
+
+.gif{
+    background-image: url("https://media.giphy.com/media/483Vt9oo9efiEAIs1R/giphy.gif");
+    background-size: cover;
+    float: left;
+    margin: 2rem;
+}
+
+
+.flecha{
+    margin-left: 3.5rem;
+
+}
+#int{
+    display: block;
+    padding: 0 4rem;
+}
+
+
+
+
+
+
+@media(min-width: 768px) and (max-width:900px){
+    .example-header-image {
+        position: absolute;
+        top:25%
+    }
+    .mat-card-avatar{
+        width: 17vw;
+        height: 17vw;
+    }
+    .gif{
+        margin: auto;
+        float: none;
+    }
+    #int{
+        padding: auto;
+        margin: auto;
+    }
+} 
+
+@media(max-width:767px){
+    .flecha{
+        display: none;
+    }
+    .ap{
+        padding: 0;
+        margin: 0;
+    }
+    .example-header-image {
+        position: absolute;
+        top:25%
+    }
+    .mat-card-avatar{
+        width: 17vw;
+        height: 17vw;
+    }
+  
+}

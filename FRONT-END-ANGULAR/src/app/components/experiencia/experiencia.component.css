@@ -1,0 +1,3 @@
+.modal-backdrop{z-index: -1}
+.modal-holder.modal-backdrop{z-index: 100}
+.modal-holder + .modal-dialog {z-index: 1000}

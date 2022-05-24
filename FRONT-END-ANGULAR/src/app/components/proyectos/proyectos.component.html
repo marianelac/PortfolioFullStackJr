@@ -1,0 +1,110 @@
+
+<div>
+  <div class="text-center" *ngIf="login">
+    <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#proyectoForm" (click)="onNewProyecto()">      
+
+      <a class="nav-link" style="color: white;">
+        Añadir proyecto <span class="sr-only">(current)</span>
+      </a>
+   </button>
+  </div>
+
+</div>
+
+<div class="container-lg"id="proyectos">
+<div > 
+  <h1 style="text-align: center">Proyectos</h1> 
+  
+  <div class="row row-1" *ngFor="let proyecto of proyectosLista; let i = index">
+    <section >
+      <i class="fa-solid fa-computer" style="font-size: 2rem"></i>
+      <div class="details">
+        <span class="title">  Nombre del proyecto: {{proyecto.nombreproyecto}} </span>
+        <span>{{proyecto.fechainicio}} <hr>{{proyecto.fechafin}}</span>
+      </div>
+      <span>Descripción: {{proyecto.descripcion}} </span> <br/> 
+      <span>Enlace web del proyecto mencionado:<a [href]= "proyecto.enlace" target="_blank"> "{{proyecto.enlace}}"</a></span>
+      <div class="bottom" style="padding-top: 1em;">
+        <img  mat-card-avatar src ="https://acortar.link/kq81yp" alt="code-logo" />
+      </div>
+      <div style="float: right;" *ngIf="login">
+        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#proyectoForm" (click)="onEditProyecto(i)">Editar</button>
+       <button type="button" class="btn btn-primary" (click)="onDeleteProyecto(i)">Borrar</button>
+       
+      </div>
+      <br>
+      <br>
+      <hr>
+      <br> 
+    </section>
+   
+  </div>
+  
+</div>
+<br>
+</div>
+
+
+
+
+
+
+
+<!--MODALES-->
+<div class="modal fade" id="proyectoForm" tabindex="-1" aria-labelledby="proyectoFormLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="proyectoFormLabel">Proyectos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="proyectoForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="idproyectos" formControlName="idproyectos">
+
+          <div class="row mb-3">
+            <label for="nombreproyecto" class="col-sm-2 col-form-label">Nombre del proyecto:</label>
+            <div class="col-sm-10">
+              <input type="text" name="nombreproyecto" formControlName="nombreproyecto" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="descripcion" class="col-sm-2 col-form-label">Breve descripción del proyecto:</label>
+            <div class="col-sm-10">
+              <input type="text" name="descripcion" formControlName="descripcion" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="enlace" class="col-sm-2 col-form-label">Enlace del proyecto:</label>
+            <div class="col-sm-10">
+              <input type="text" name="enlace" formControlName="enlace" class="form-control" required>
+            </div>
+          </div>
+
+
+          <div class="row mb-3">
+            <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio:</label>
+            <div class="col-sm-10">
+              <input type="date" name="fechainicio" formControlName="fechainicio" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="fechafin" class="col-sm-2 col-form-label">Fecha de finalización:</label>
+            <div class="col-sm-10">
+              <input type="date" name="fechafin" formControlName="fechafin" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ 

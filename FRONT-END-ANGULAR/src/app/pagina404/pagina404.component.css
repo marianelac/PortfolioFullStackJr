@@ -1,0 +1,50 @@
+
+.container{
+    
+    padding-top: 1rem;
+    
+}
+h1, h3, p, a{
+    color: white;
+    font-weight: bold;
+}
+h1{
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 8%;
+    left: 45%;
+    z-index: 2;
+    
+}
+#img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120vh;
+    height: 93vh;
+    
+    background-color: rgb(90, 79, 79);
+    
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    opacity: 0.7;
+    border: solid rgb(90, 79, 79);
+    overflow: hidden;
+   
+}
+ img{
+    height: 58vh;
+    width: 50vh;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    
+}
+a{
+    text-decoration: none;
+    animation-iteration-count: infinite;
+}
+#info404{
+    position: absolute;
+    left: 37%;
+    top: 17%;
+    
+}

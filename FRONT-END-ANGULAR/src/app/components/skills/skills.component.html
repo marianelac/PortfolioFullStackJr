@@ -1,0 +1,168 @@
+
+<div class="container-lg">
+<span> 
+  <button mat-raised-button color="primary" style="font-size: 2rem; text-align: center;"> Soft skills  </button>
+  <div class="text-center" *ngIf="login">
+    <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onNewSkill()">      
+
+      <a class="nav-link" style="color: white;">
+        Añadir Soft Skill <span class="sr-only">(current)</span>
+      </a>
+   </button>
+  </div>
+</span>
+
+  <div fxLayout="row wrap" class="container">
+   <div fxFlex *ngFor="let skill of skillsLista; let i = index">
+     
+      <div class="grid-item" fxLayout="row" fxLayoutAlign="center center">
+       
+        <circle-progress
+        [percent]="skill.porcentaje"
+        [subtitle]="skill.area"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'blue'"
+        [innerStrokeColor]="'violet'"
+        [animation]="true"
+        [animationDuration]="300"
+        [lazy]="true"
+        *ngIf="skill.habilidadTipo === 'SOFT'"></circle-progress>
+        
+          <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+         <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+         
+       
+      </div>
+    </div> 
+  </div>
+</div>
+ 
+
+<div class="container-lg">
+  <span>
+    <button mat-raised-button color="primary" style="font-size: 2rem; text-align: center;">Hard skills  </button>
+    <div class="text-center" *ngIf="login">
+      <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onNewSkill()">      
+  
+        <a class="nav-link" style="color: white;">
+          Añadir proyecto <span class="sr-only">(current)</span>
+        </a>
+     </button>
+    </div>
+
+
+  </span>
+
+  <div fxLayout="row wrap" class="container" >
+    <div fxFlex  *ngFor="let skill of skillsLista; let i = index">
+      
+      <div class="grid-item" fxLayout="row" fxLayoutAlign="center center" >
+        
+        <circle-progress
+        [subtitle]="skill.area"
+        [percent]= "skill.porcentaje"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'blue'"
+        [innerStrokeColor]="'lightblue'"
+        [animation]="true"
+        [animationDuration]="300"
+        [lazy]="true"
+        *ngIf="skill.habilidadTipo === 'HARD'"></circle-progress>
+        <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+        <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!--VER SI ESTE MODAL SINO
+
+  </div>
+  <div class="row m-3">
+    <h1 style="text-align: center;">Soft Skills</h1>
+      <div *ngFor="let skill of skillsLista; let i = index" class="col-4">
+        <circle-progress
+          [percent]="skill.porcentaje"
+          [radius]="100"
+          [subtitle]="skill.area"
+          [subtitleColor]="'#000000'"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#0000FF'"
+          [innerStrokeColor]="'#5178B3'"
+          [animation]="true"
+          [animationDuration]="500"
+          [lazy]="true"
+          *ngIf="skill.habilidadTipo === 'SOFT'"></circle-progress>
+          <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+          <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+      </div>
+  </div>
+  <div class="row m-3">
+    <h1 style="text-align: center;">Hard Skills</h1>
+      <div *ngFor="let item of skillsLista; let i = index" class="col-4">
+        <circle-progress
+          [percent]="item.porcentaje"
+          [radius]="100"
+          [subtitle]="item.area"
+          [subtitleColor]="'#000000'"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#0000FF'"
+          [innerStrokeColor]="'#5178B3'"
+          [animation]="true"
+          [animationDuration]="500"
+          [lazy]="true"
+          *ngIf="item.habilidadTipo === 'HARD'"></circle-progress>
+          <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+          <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+      </div>
+  </div> -->
+
+  <!--MODALES-->
+<div class="modal fade" id="skillForm" tabindex="-1" aria-labelledby="skillFormLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="skillFormLabel">Skills</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="idskills" formControlName="idskills">
+
+          <div class="row mb-3">
+            <label for="area" class="col-sm-2 col-form-label">Nombre del skill:</label>
+            <div class="col-sm-10">
+              <input type="text" name="area" formControlName="area" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="porcentaje" class="col-sm-2 col-form-label">Porcentaje:</label>
+            <div class="col-sm-10">
+              <input type="number" name="porcentaje" formControlName="porcentaje" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="habilidadTipo" class="col-sm-2 col-form-label">Tipo de skill:</label>
+            <div class="col-sm-10">
+              <input type="text" name="habilidadTipo" formControlName="habilidadTipo" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ 

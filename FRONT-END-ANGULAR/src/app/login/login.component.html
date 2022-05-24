@@ -1,0 +1,85 @@
+<div class="container-lg">
+  <form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
+    <h2 style="text-align: center">Iniciar sesión</h2>
+
+    <div class="row mb-3">
+      <label for="username" class="col-sm-6 col-form-label">Nombre de usuario:</label>
+    <input type="text" formControlName="username" class="form-control" id="username">
+    <div *ngIf="Username?.errors && Username?.touched">
+      <p *ngIf="Username?.hasError('required')" class="text-danger">
+        El nombre de usuario es requerido.
+      </p>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="password" class="col-sm-6 col-form-label">Contraseña:</label>
+    <input type="password" formControlName="password" class="form-control" id="password">
+<div *ngIf="Password?.errors && Password?.touched">
+  <p *ngIf="Password?.hasError('required')" class="text-danger">
+    La contraseña es requerida.
+  </p>
+</div>
+    </div>
+<button class="btn btn-primary">
+  <input type="submit" value="Iniciar sesión" style="background-color:blue; color:white">
+</button>
+  </form>
+
+</div>
+
+  
+
+
+<!-- (2) crear el ng-template para mostrar en el modal 
+<form [formGroup]="loginForm" class="m-5" (ngSubmit)="onEnviar($event)">
+  <p>Ingrese sus datos para iniciar sesión:</p>
+    <div class="mb-5">
+     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':Email?.errors && Email?.touched, 'is-valid':!Email?.errors && Email?.touched}"
+      id="email">
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger">El correo electrónico es requerido.</p>
+
+      </div>
+      <p *ngIf="Email?.hasError('email')" class="text-danger">El formato del correo electrónico debe ser válido.</p>
+      <label for="exampleImputNombreUsuario" class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" formControlName="nombreUsuario" [ngClass]="{'is-invalid':NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid':!NombreUsuario?.errors && NombreUsuario?.touched}" id="nombreUsuario">
+<div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
+  <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">El nombre de usuario es requerido</p>
+</div>
+
+
+    </div>
+    <div class="mb-5">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid':Password?.errors && Password?.touched, 'is-valid':!Password?.errors && Password?.touched}"
+       id="password">
+
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida.</p>
+        <p *ngIf="Password?.hasError('minlength')" class="text-danger">La contraseña debe tener 8 o más caracteres.</p>
+
+      </div>
+    </div>
+
+    <a mat-raised-button color="primary" class="animate__animated animate__headShake"  type="submit">Ingresar</a>
+  </form> --> 
+  
+ <!-- SOLO ME SIRVE EL FALSO <div class="container">
+    <form class="m-5">
+        <div class="mb-3">
+            <label for="username" class="form-label">Usuario</label>
+            <input type="text"  name="username" class="form-control" id="username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
+        </div>
+
+        <button type="submit" (click)="login(username, password)" class="btn btn-primary me-2">Enviar</button>
+        <button type="submit" class="btn btn-primary" (click)="volverAlHome()">Volver</button>
+
+    </form>
+</div> -->
+  
