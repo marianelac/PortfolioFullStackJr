@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://api-argprog-mcg.herokuapp.com/api',
-  apiLog: 'http://api-argprog-mcg.herokuapp.com/api/login',
+  apiBaseUrl: 'https://portfolio-mcg.herokuapp.com/api',
+  apiLog: 'https://portfolio-mcg.herokuapp.com/api/login',
  
 };
 
