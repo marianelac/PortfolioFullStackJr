@@ -1,5 +1,6 @@
 
-<div>
+<div class="container-lg"id="proyectos" style="background-color: #99E2B4;">
+
   <div class="text-center" *ngIf="login">
     <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#proyectoForm" (click)="onNewProyecto()">      
 
@@ -9,9 +10,9 @@
    </button>
   </div>
 
-</div>
 
-<div class="container-lg"id="proyectos">
+
+
 <div > 
   <h1 style="text-align: center">Proyectos</h1> 
   
@@ -25,7 +26,7 @@
       <span>Descripción: {{proyecto.descripcion}} </span> <br/> 
       <span>Enlace web del proyecto mencionado:<a [href]= "proyecto.enlace" target="_blank"> "{{proyecto.enlace}}"</a></span>
       <div class="bottom" style="padding-top: 1em;">
-        <img  mat-card-avatar src ="https://acortar.link/kq81yp" alt="code-logo" />
+        <img  mat-card-avatar src ="https://ibb.co/8ckQ5Fy" alt="code-logo" />
       </div>
       <div style="float: right;" *ngIf="login">
         <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#proyectoForm" (click)="onEditProyecto(i)">Editar</button>

@@ -16,3 +16,6 @@
 .row{
   display: flex;
 }
+.container-lg{
+  border-radius: 10px;
+}

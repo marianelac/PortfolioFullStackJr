@@ -13,7 +13,7 @@ import { Experiencia } from "../interfaces/experiencia";
     providedIn: 'root'
   })
   export class ExperienciaService{
-private apiExp= environment.apiBaseUrl;
+private apiExp= 'https://portfolio-mcg.herokuapp.com/api';
     constructor(private http:HttpClient){
         console.log("El servicio experiencia está corriendo.")
     }

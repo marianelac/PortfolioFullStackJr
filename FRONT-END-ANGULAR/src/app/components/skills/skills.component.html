@@ -1,5 +1,5 @@
 
-<div class="container-lg">
+<div class="container-lg" id="skills" style="background-color: #c1fff3;">
 <span> 
   <button mat-raised-button color="primary" style="font-size: 2rem; text-align: center;"> Soft skills  </button>
   <div class="text-center" *ngIf="login">
@@ -79,11 +79,21 @@
     </div>
   </div>
 </div>
-<!--VER SI ESTE MODAL SINO
+<!--VER SI ESTE MODELO SINO -->
+<div class="container-lg" id="skills" style="background-color: #ffb499">
+<h1 style="text-align: center;"> Skills</h1>
 
-  </div>
+<div class="text-center" *ngIf="login">
+  <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onNewSkill()">      
+
+    <a class="nav-link" style="color: white;">
+      Añadir proyecto <span class="sr-only">(current)</span>
+    </a>
+ </button>
+</div>
+
   <div class="row m-3">
-    <h1 style="text-align: center;">Soft Skills</h1>
+  
       <div *ngFor="let skill of skillsLista; let i = index" class="col-4">
         <circle-progress
           [percent]="skill.porcentaje"
@@ -97,31 +107,12 @@
           [animation]="true"
           [animationDuration]="500"
           [lazy]="true"
-          *ngIf="skill.habilidadTipo === 'SOFT'"></circle-progress>
+          ></circle-progress>
           <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
           <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
       </div>
   </div>
-  <div class="row m-3">
-    <h1 style="text-align: center;">Hard Skills</h1>
-      <div *ngFor="let item of skillsLista; let i = index" class="col-4">
-        <circle-progress
-          [percent]="item.porcentaje"
-          [radius]="100"
-          [subtitle]="item.area"
-          [subtitleColor]="'#000000'"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#0000FF'"
-          [innerStrokeColor]="'#5178B3'"
-          [animation]="true"
-          [animationDuration]="500"
-          [lazy]="true"
-          *ngIf="item.habilidadTipo === 'HARD'"></circle-progress>
-          <button type="button" class="btn btn-primary" *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
-          <button type="button" class="btn btn-primary" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
-      </div>
-  </div> -->
+</div>
 
   <!--MODALES-->
 <div class="modal fade" id="skillForm" tabindex="-1" aria-labelledby="skillFormLabel" aria-hidden="true" >

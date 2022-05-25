@@ -13,7 +13,7 @@ import { Educacion } from "../interfaces/educacion";
     providedIn: 'root'
   })
   export class EducacionService{
-private apiEdu= environment.apiBaseUrl;
+private apiEdu= 'https://portfolio-mcg.herokuapp.com/api';
 
     constructor(private http:HttpClient){
         console.log("El servicio educación está corriendo.")

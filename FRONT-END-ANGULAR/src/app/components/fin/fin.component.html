@@ -93,12 +93,48 @@
     </div>
   </div>
 </div> -->
-
-<div class="row">
-  <footer>
-<span >Portfolio de Marianela Gamarra - Argentina Programa-</span>
-<p>2022. Formosa, Argentina.</p>
-  </footer>
+<div>
+  <div *ngFor="let red of redesLista; let i = index">
+    <div class="actions" *ngIf="login">
+     
+      <a
+        mat-button
+        type="button"
+        class="btn btn-primary"
+        style="background-color: #99e284"
+        data-bs-toggle="modal"
+        data-bs-target="#redesForm"
+        (click)="onEditRedes(i)"
+        ><i class="fa-solid fa-pencil" style="font-size: 1.3rem; color: white"></i
+      ></a>
+     
+    </div>
+    <span style="padding-right: 1em"
+      ><a [href]="red.github">
+        <i class="bi bi-github" style="font-size: 1.3rem; color: white"></i></a
+    ></span>
+    <span style="padding-right: 1em">
+      <a [href]="red.linkedin"
+        ><i
+          class="bi bi-linkedin"
+          style="font-size: 1.3rem; color: white"
+        ></i></a
+    ></span>
+    <span style="padding-right: 1em">
+      <a [href]="red.instagram"
+        ><i
+          class="bi bi-instagram"
+          style="font-size: 1.3rem; color: white"
+        ></i></a
+    ></span>
+  </div>
 </div>
+
+
+
+  <footer style="background-color: #bfd200; text-align: center;">
+<span >Portfolio de Marianela Gamarra - Argentina Programa -2022- Formosa, Argentina.</span>
+  </footer>
+
 
   

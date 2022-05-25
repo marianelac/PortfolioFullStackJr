@@ -11,7 +11,7 @@ import { Proyectos } from "../interfaces/proyecto";
   })
   export class ProyectosService{
 
-  private  apiProyectos= environment.apiBaseUrl;
+  private  apiProyectos= 'https://portfolio-mcg.herokuapp.com/api';
 
     constructor(private http:HttpClient){
         console.log("El servicio proyectos está corriendo.")

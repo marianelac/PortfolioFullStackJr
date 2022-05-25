@@ -12,7 +12,7 @@ import { Persona } from '../interfaces/persona';
 })
 export class PortfolioService {
 
-private apiServerUrl=environment.apiBaseUrl;
+private apiServerUrl= 'https://portfolio-mcg.herokuapp.com/api';
 
   constructor(private http:HttpClient) { 
 console.log("El servicio portfolio persona está corriendo")

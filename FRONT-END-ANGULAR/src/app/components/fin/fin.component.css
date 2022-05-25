@@ -10,16 +10,13 @@
          color: rgb(44, 43, 43);
       }
       
-span p{
-  text-align: center;
-}
-.row{
-  background-color: rgb(159, 215, 248);
-}
+
+
 footer{
   color: #1F1C1C;
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px -2px 5px #999;
+  box-shadow: 2px -2px 5px rgb(190, 230, 80);
+  opacity: 0.8;
 }

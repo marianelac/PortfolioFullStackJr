@@ -5,6 +5,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Experiencia } from 'src/app/interfaces/experiencia';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { LoginService } from 'src/app/servicios/login.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -18,15 +19,13 @@ export class ExperienciaComponent implements OnInit {
 
   experienciaForm: FormGroup;
   
-usuarioLoggeado:any;
+
  
 
   constructor(
     private experienciaservice: ExperienciaService,
-    private autenticacionservice: AutenticacionService,
-    private formBuilder: FormBuilder,
-    private modalService: NgbModal
-  ) {
+    private loginservice:LoginService,
+    private formBuilder: FormBuilder) {
     this.experienciaForm = this.formBuilder.group({
       idexperiencia: [''],
       puesto: ['', [Validators.required]],
@@ -38,11 +37,11 @@ usuarioLoggeado:any;
       persona: [4]
     });
   }
-
+login:any;
   ngOnInit(): void {
-
+    this.loginservice.LogState().subscribe((login) =>(this.login = login));
     this.obtenerExperiencia();
-
+    console.log(this.login);
 
     
 

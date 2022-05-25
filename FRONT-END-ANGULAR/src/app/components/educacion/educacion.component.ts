@@ -102,7 +102,7 @@ login:any;
   }
   onDeleteEducacion(index: number) {
     let educacion: Educacion = this.educacionLista[index];
-    if (confirm("¿Está seguro que desea borrar la experiencia seleccionada?")) {
+    if (confirm("¿Está seguro que desea borrar la educación seleccionada?")) {
       this.educacionService.borrarEducacion(educacion.ideducacion).subscribe(
         () => {
           this.obtenerEducacion();

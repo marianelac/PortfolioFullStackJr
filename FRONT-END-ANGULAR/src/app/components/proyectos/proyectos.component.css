@@ -28,8 +28,8 @@ html{
   transform: translateX(-50%);
 } */
 .container-lg{
-  background-color: #99E2B4;
-  padding: 1.5em 1.5em 0;
+  
+  padding: 1em 1.5em 0;
   border-radius: 20px;
 }
 

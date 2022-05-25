@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class RedesServiceService {
 
-private apiRed= environment.apiBaseUrl;
+private apiRed= 'https://portfolio-mcg.herokuapp.com/api';
 
 constructor(private http:HttpClient) {
     console.log("El servicio redes está corriendo.")

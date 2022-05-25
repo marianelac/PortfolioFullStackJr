@@ -1,8 +1,8 @@
-<body>
-<div id="education">
+
+<div class="container-lg" id="experiencia" style="background-color: #EEC824;">
   <div class="card-titles">
-    <h2>Experiencia</h2>
-    <div *ngIf="usuarioLoggeado" class="btn-edit">
+    <h2 style="text-align: center;">Experiencia</h2>
+    <div *ngIf="login" class="btn-edit">
       <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm" (click)="onNewExperiencia()"><i class="fa fa-plus"></i></button>
     </div>
   </div>
@@ -11,7 +11,7 @@
       <li *ngFor="let experiencia of experienciaLista; let i = index">
         <div class="data-container">
           <a href="#">
-            <div class="img-image-container"><img id="logo" class="logo-image"
+            <div class="img-square-wrapper"><img id="logo" class="logo-image"
                 [src]="experiencia.logo"></div>
             <div class="list-info">
               <div>
@@ -24,7 +24,7 @@
             </div>
           </a>
         </div>
-        <div *ngIf="usuarioLoggeado" class="data-control">
+        <div *ngIf="login" class="data-control">
           <div class="btn-edit">
             <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm" (click)="onEditExperiencia(i)"><i class="fa fa-pen"></i></button>
           </div>
@@ -104,4 +104,3 @@
       </div>
     </div>
   </div> 
-</body>

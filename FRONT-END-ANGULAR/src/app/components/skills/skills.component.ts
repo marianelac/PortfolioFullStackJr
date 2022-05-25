@@ -87,7 +87,7 @@ login:any;
     }
     onDeleteSkill(index: number) {
       let skills: Skills = this.skillsLista[index];
-      if (confirm("¿Está seguro que desea borrar la experiencia seleccionada?")) {
+      if (confirm("¿Está seguro que desea borrar el skill seleccionado?")) {
         this.skillservice.borrarSkills(skills.idskills).subscribe(
           () => {
             this.obtenerSkills();

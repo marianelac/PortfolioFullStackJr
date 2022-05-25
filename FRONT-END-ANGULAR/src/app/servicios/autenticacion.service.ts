@@ -12,7 +12,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  private apiAuth = environment.apiLog;
+  private apiAuth = 'https://portfolio-mcg.herokuapp.com/api/login';
 user:LoginUsuario={username:'', password:'', token:''};
 //persona!:Persona; 
 loggedIn():void{
@@ -59,16 +59,6 @@ logState():void{
     localStorage.clear();
     console.clear();
     
- // this.currentUserSubject.next(null);
  
-  
-
-  // probar despues   window.sessionStorage.clear();
-  //  sessionStorage.removeItem('currentUser');
- 
- 
- // window.location.reload();
-  
- //this.router.navigate(['/login']);
   }  
 }

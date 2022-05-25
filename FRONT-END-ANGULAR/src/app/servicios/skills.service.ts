@@ -9,7 +9,7 @@ import { Skills } from "../interfaces/skills";
     providedIn: 'root'
   })
   export class SkillsService{
-private apiSkills= environment.apiBaseUrl;
+private apiSkills= 'https://portfolio-mcg.herokuapp.com/api';
 
     constructor(private http:HttpClient){
         console.log("El servicio skills está corriendo.")
