@@ -29,46 +29,7 @@ public class ProyectosController {
     @Autowired
     ProyectosService proyectoservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<ProyectosModel> getAll(){
-     * return proyectoservice.getAll();
-     * }
-     * 
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity<ProyectosModel> getById(@PathVariable(value="id") int
-     * id){
-     * return proyectoservice.getById(id);
-     * }
-     * 
-     * @PostMapping("/crear")
-     * public ProyectosModel save(@Validated @RequestBody ProyectosModel proyecto){
-     * return proyectoservice.save(proyecto);
-     * }
-     * 
-     * 
-     * @PutMapping("/editar/{id}")
-     * public ResponseEntity<ProyectosModel> update(@PathVariable(value="id")int
-     * id, @RequestBody ProyectosModel proyecto){
-     * if (id== proyecto.getIdProyectos()){
-     * ProyectosModel nuevoProyecto = proyectoservice.save(proyecto);
-     * return ResponseEntity.ok().body(nuevoProyecto);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/borrar/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.proyectoservice.deleteProyecto(id);
-     * if (ok){
-     * return "Se eliminó proyecto con id " + id;
-     * }else{
-     * return "No pudo eliminar proyecto con id" + id;
-     * }
-     * }
-     */
+    
 
     @GetMapping("/lista")
     public ArrayList<ProyectosModel> obtenerProyecto() {

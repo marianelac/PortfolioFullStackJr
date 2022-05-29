@@ -29,47 +29,7 @@ public class ExperienciaController {
     @Autowired
     ExperienciaService expservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<ExperienciaModel> getAll(){
-     * return expservice.getAll();
-     * }
-     * 
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity<ExperienciaModel> getById(@PathVariable(value="id") int
-     * id){
-     * return expservice.getById(id);
-     * }
-     * 
-     * @PostMapping("/crear")
-     * public ExperienciaModel save(@Validated @RequestBody ExperienciaModel
-     * experiencia){
-     * return expservice.save(experiencia);
-     * }
-     * 
-     * 
-     * @PutMapping("/editar/{id}")
-     * public ResponseEntity<ExperienciaModel> update(@PathVariable(value="id")int
-     * id, @RequestBody ExperienciaModel experiencia){
-     * if (id== experiencia.getIdExperiencia()){
-     * ExperienciaModel nuevaExperiencia = expservice.save(experiencia);
-     * return ResponseEntity.ok().body(nuevaExperiencia);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/borrar/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.expservice.deleteExperiencia(id);
-     * if (ok){
-     * return "Se eliminó experiencia con id " + id;
-     * }else{
-     * return "No pudo eliminar experiencia con id" + id;
-     * }
-     * }
-     */
+   
     @GetMapping("/lista")
     public ArrayList<ExperienciaModel> obtenerExperiencia() {
         return expservice.obtenerExperiencia();
