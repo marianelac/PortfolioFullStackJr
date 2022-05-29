@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Persona } from '../interfaces/persona';
 
-//'https://api-arg-programa.herokuapp.com/api/persona';
+
 
 
 @Injectable({
