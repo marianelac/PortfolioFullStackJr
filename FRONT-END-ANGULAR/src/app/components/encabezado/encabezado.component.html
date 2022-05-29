@@ -1,0 +1,39 @@
+
+
+<div class="card text-center" style="background-color: rgb(37, 34, 34); color: white;" *ngIf="persona">
+  <div class="card-header">
+    <img mat-card-image class="main-image" [src]="persona.fotofondo" alt="fondo">
+          <img mat-card-avatar class="example-header-image" [src]="persona.fotoperfil" alt="fotodeperfil">
+       
+  </div>
+  <div class="card-body">
+    <p id="usuario">@{{persona.username}}</p>
+
+    <p class="card-title" style="padding-top: 0.5rem"> ¡Hola! Me llamo: {{persona.nombres}} {{persona.apellido}} </p>
+    <div class="card-text">
+      <p style="margin-bottom: 0">Profesión: {{persona.ocupacion}}</p> <br>
+      <p ><i class="fa-solid fa-location-dot"></i>  {{persona.ubicacion}}</p>
+      <p style="margin-bottom: 0; padding-top: 1em;"> Acerca de mi:</p><br>
+      <p> {{persona.acerca}}</p> <br>
+      <p>Sean bienvenidos a mi portfolio. ¡Empecemos el recorrido!</p>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+   
+  </div>
+  <div *ngIf="login"> 
+  
+ <button class="btn btn-success" style=" border-radius: 50%;" (click)="abrirModal(persona.idpersona)"><i class="fa-solid fa-pencil" ></i></button>        
+   
+
+  </div>
+</div>
+       
+
+
+
+
+
+
+
+

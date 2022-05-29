@@ -1,0 +1,111 @@
+
+<div class="container-lg" id="experiencia" style="background-color: rgb(37, 34, 34); color: white;">
+  <div class="card-titles">
+    <h1 style="text-align: center;"><b>Experiencia</b></h1> 
+    <div *ngIf="login" class="btn-edit">
+      <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#experienciaForm" (click)="onNewExperiencia()">Añadir experiencia</button>
+    </div> 
+  </div>
+  <div>
+    <ul class="items-list" id="experienciaLista">
+      <li *ngFor="let experiencia of experienciaLista; let i = index">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 mt-3">
+              <div class="card-horizontal">
+
+            <div class="img-square-wrapper">
+              <img id="logo" class="card-img-top" [src]="experiencia.logo">
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3 id="puesto">Puesto: {{ experiencia.puesto }} </h3>
+                <p><span id="descripciontareas"> Breve descripción de las tareas realizadas: <br>
+                  {{ experiencia.descripciontareas }}</span>
+                  <br>
+                  <br>
+                  <span id="empresanombre">Empresa: {{ experiencia.empresanombre }}</span>
+                </p>
+                <p>Período: <time id="fechainicio">{{ experiencia.fechainicio  | date: 'dd/MM/yyyy'}}</time> - <time id="fechafin">{{ experiencia.fechafin  | date: 'dd/MM/yyyy' }}</time></p>
+                <button class="btn btn-success" *ngIf="login" style=" border-radius: 50%" data-bs-toggle="modal" data-bs-target="#experienciaForm" (click)="onEditExperiencia(i)"><i class="fa-solid fa-pencil" ></i></button>
+                <button class="btn btn-danger" *ngIf="login" style=" border-radius: 50%" (click)="onDeleteExperiencia(i)"><i class="fa-solid fa-trash-can"></i></button>
+
+              </div>
+            </div>
+
+            </div>
+            </div>
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="experienciaForm" tabindex="-1" aria-labelledby="experienciaFormLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="experienciaFormLabel">Experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="experienciaForm" (ngSubmit)="onSubmit()">
+            <input type="hidden" name="idexperiencia" formControlName="idexperiencia">
+
+            <div class="row mb-3">
+              <label for="puesto" class="col-sm-2 col-form-label">Puesto:</label>
+              <div class="col-sm-10">
+                <input type="text" name="puesto" formControlName="puesto" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="title" class="col-sm-2 col-form-label">Descripción de tareas realizadas:</label>
+              <div class="col-sm-10">
+                <input type="text" name="descripciontareas" formControlName="descripciontareas" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="score" class="col-sm-2 col-form-label">Empresa:</label>
+              <div class="col-sm-10">
+                <input type="text" name="empresanombre" formControlName="empresanombre" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="score" class="col-sm-2 col-form-label">Logo:</label>
+              <div class="col-sm-10">
+                <input type="text" name="logo" formControlName="logo" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio:</label>
+              <div class="col-sm-10">
+                <input type="date" name="fechainicio" formControlName="fechainicio" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="fechafin" class="col-sm-2 col-form-label">Fecha de finalización:</label>
+              <div class="col-sm-10">
+                <input type="date" name="fechafin" formControlName="fechafin" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 

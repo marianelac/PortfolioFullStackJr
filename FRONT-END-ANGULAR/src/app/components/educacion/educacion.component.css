@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+
+  font-family: "Poppins", sans-serif;
+}
+
+.container-lg{
+  padding: 1.5em 1.5em 0 3.5rem;
+  border-radius: 20px;
+  box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+
+}
+
+.wrapper{
+  
+  margin: 50px auto ;
+  padding: 0 20px;
+  position: relative;
+  color: black;
+ 
+}
+
+.row{
+  display: flex;
+  padding-bottom: 2em;
+  margin-bottom: 0.5em;
+  width: 80%;
+}
+
+.wrapper .row section{
+  background: #fff;
+  border-radius: 5px;
+  word-wrap: break-word;
+  padding: 18px;
+  
+}
+
+
+
+
+.row section .details,
+.row section .bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row section .details .title{
+  font-size: 22px;
+  font-weight: 600;
+}
+.row section p{
+  margin: 10px 0 17px 0;
+}
+
+
+
+.logo{
+  border-radius: 10px;
+  height: 4vw;
+  width: 8vw;
+  box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+
+}
+@media(max-width: 790px){
+  .wrapper{
+    left: 0;
+  }
+  .wrapper .row{
+    margin: 30px 0 3px 50px;
+  }
+  .wrapper .row section{
+    width: 65vw;
+  }
+  section{
+    padding: 10px;
+  }
+}
+@media(max-width: 440px){
+  section{
+    padding: 10px}
+
+  .wrapper .row{
+    margin: 10px 0;
+  }
+  #time{
+    font-size: smaller;
+  }
+}

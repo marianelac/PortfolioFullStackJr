@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+ 
+  font-family: "Poppins", sans-serif;
+}
+
+    .example-card {
+        max-width: 80%;
+        background-color: #FAAB36;
+         color: rgb(44, 43, 43);
+      }
+      
+
+
+footer{
+  color: #f7f5f5;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px -2px 5px rgb(156, 156, 156);
+  opacity: 0.8;
+  border-radius: 10px;
+  
+}

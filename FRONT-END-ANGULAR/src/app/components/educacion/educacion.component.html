@@ -1,0 +1,107 @@
+
+
+<div class="container-lg" id="educacion" style="background-color: rgb(37, 34, 34); color: white;">
+  <h1 style="text-align: center;"><b>Educación</b></h1>
+  <div>
+    <div class="text-center" *ngIf="login">
+      <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#educacionForm" (click)="onNewEducacion()">      
+  
+        <a class="nav-link" style="color: white;">
+          Añadir educación <span class="sr-only">(current)</span>
+        </a>
+     </button>
+    </div>
+  
+  </div>
+<div class="wrapper"> 
+ 
+  <div class="row row-1" *ngFor="let educacion of educacionLista; let i = index">
+    <section >
+      <i class="fa-solid fa-graduation-cap" style="font-size: 2rem"></i>
+      <div class="details">
+        <span class="title">Curso: <small>{{educacion.titulo}}</small></span><br>
+        
+        <span id="time">{{educacion.fechainicio  | date: 'dd/MM/yyyy'}}<hr>{{educacion.fechafin  | date: 'dd/MM/yyyy'}}</span>
+      </div>
+      <span>Área: {{educacion.carrera}} </span> <br/> 
+      <span>Institución: {{educacion.institucion}}</span>
+      <div class="bottom">
+        <img class="logo" [src] ="educacion.logo" />
+      </div>
+      <div style="float: right;" *ngIf="login">
+        <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#educacionForm" (click)="onEditEducacion(i)">Editar</button>
+       <button type="button" class="btn btn-danger" (click)="onDeleteEducacion(i)">Borrar</button>
+       
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+
+<!-- MODALES-->
+
+
+<div class="modal fade ml-3" id="educacionForm" tabindex="-1" aria-labelledby="educacionFormLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="educacionFormLabel">Educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="educacionForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="ideducacion" formControlName="ideducacion">
+
+          <div class="row mb-3">
+            <label for="titulo" class="col-sm-2 col-form-label">Titulo:</label>
+            <div class="col-sm-10">
+              <input type="text" name="titulo" formControlName="titulo" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="institucion" class="col-sm-2 col-form-label">Institución:</label>
+            <div class="col-sm-10">
+              <input type="text" name="institucion" formControlName="institucion" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="carrera" class="col-sm-2 col-form-label">Carrera:</label>
+            <div class="col-sm-10">
+              <input type="text" name="carrera" formControlName="carrera" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="logo" class="col-sm-2 col-form-label">Logo:</label>
+            <div class="col-sm-10">
+              <input type="text" name="logo" formControlName="logo" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio:</label>
+            <div class="col-sm-10">
+              <input type="date" name="fechainicio" formControlName="fechainicio" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="fechafin" class="col-sm-2 col-form-label">Fecha de finalización:</label>
+            <div class="col-sm-10">
+              <input type="date" name="fechafin" formControlName="fechafin" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

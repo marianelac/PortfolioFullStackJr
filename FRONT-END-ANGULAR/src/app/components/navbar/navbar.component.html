@@ -1,0 +1,137 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark  p-2" style="background: black">  
+  <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa" target="_blank">
+        <img src="../../../assets/APLogo-20-20.png" alt="logoAP" height="50" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll"  aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+        <ul class="navbar-nav mr-auto">
+          <ng-container *ngFor="let red of redesLista; let i = index">
+
+            <li class="nav-item" *ngIf="login">
+              <button class="btn btn-success" style=" border-radius: 50%"  data-bs-toggle="modal"
+              data-bs-target="#redesForm"
+              (click)="onEditRedes(i)"><i class="fa-solid fa-pencil" ></i></button>
+            </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light dropdown-item"  [href]="red.linkedin">
+              <i class="grey-text fab fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light"  [href]="red.github">
+              <i class="grey-text fab fa-github-square fa-2x"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light"  [href]="red.instagram">
+              <i class="grey-text fab fa-instagram-square fa-2x"></i>
+            </a>
+          </li>
+        </ng-container>
+          <li class="nav-item" *ngIf="!login">
+             <a class="btn btn-outline-light my-2 my-sm-0" routerLink="/login">
+               Log In</a>
+          </li>
+          <li class="nav-item" *ngIf="login" >
+              <a class="btn btn-outline-light my-2 my-sm-0"
+              (click)="logout()" >
+               Log Out</a>  
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+</nav>
+<!--VIENDO MODALES-->
+
+<div
+  class="modal fade m5"
+  id="redesForm"
+  tabindex="-1"
+  aria-labelledby="redesFormLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="redesFormLabel">Enlaces Web</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="redesForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="idredes" formControlName="idredes" />
+
+          <div class="row mb-3">
+            <label for="github" class="col-sm-2 col-form-label"
+              >Github:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="github"
+                formControlName="github"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="linkedin" class="col-sm-2 col-form-label"
+              >Linkedin:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="linkedin"
+                formControlName="linkedin"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="instagram" class="col-sm-2 col-form-label"
+              >Instagram:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="instagram"
+                formControlName="instagram"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="button"
+              class="btn btn-secondary me-4"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

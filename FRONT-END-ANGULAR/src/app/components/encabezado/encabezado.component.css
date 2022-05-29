@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+ .card{
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+    word-wrap: break-word;
+    line-height: normal;
+} 
+  .main-image{
+      margin: 0 0 1em 0;
+      padding: 2em 1.5em 0;
+      width:80vw;
+      height: 25vw; 
+      background-size: contain;
+      
+      
+   
+      
+  }
+  
+  .example-header-image {
+    background-size: contain;
+    position: absolute;
+    top: 31%;
+    left: 42%;
+  }
+.mat-card-avatar{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    border: solid #ffffff;
+    box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+    margin-bottom: 1em;
+}
+#usuario{
+    margin-top: 1em;
+}
+
+
+@media(min-width: 768px) and (max-width:900px){
+    .example-header-image {
+        position: absolute;
+        top:30%
+    }
+    .main-image{
+        width: 80vw;
+        height: 35vw;
+    }
+    .mat-card-avatar{
+        
+        width: 16vw;
+        height: 16vw;
+    }
+    
+} 
+
+@media(max-width:767px){
+    
+    .ap{
+        padding: 0;
+        margin: 0;
+    }
+    .example-header-image {
+        position: absolute;
+        top:15%
+    }
+    .mat-card-avatar{
+        width: 16vw;
+        height: 16vw;
+    }
+  
+}

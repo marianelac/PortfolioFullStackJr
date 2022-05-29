@@ -1,0 +1,89 @@
+<div class="container">
+  <form [formGroup]="formulario" (ngSubmit)="guardarEncabezado()">
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Nombres: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="nombres"
+        formControlName="nombres"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Apellido: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="apellido"
+        formControlName="apellido"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Residencia: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="ubicacion"
+        formControlName="ubicacion"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Profesión: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="ocupacion"
+        formControlName="ocupacion"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Foto de perfil: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="fotoperfil"
+        formControlName="fotoperfil"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Banner: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="fotofondo"
+        formControlName="fotofondo"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Acerca de mi: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="acerca"
+        formControlName="acerca"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Correo electrónico: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="email"
+        formControlName="email"
+      />
+    </div>
+    <div class="input-group flex-nowrap mt-2">
+      <span class="input-group-text">Nombre de usuario: </span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="username"
+        formControlName="username"
+      />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-secondary">Guardar cambios</button>
+      <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
+    </div>
+  </form>
+</div>

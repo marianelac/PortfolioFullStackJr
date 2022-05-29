@@ -1,0 +1,119 @@
+
+<div class="container-lg" id="skills" style="background-color: rgb(37, 34, 34); color: white;">
+
+  <h1 style="text-align: center;"> <b>Skills</b></h1>
+  <p style="padding-left: 1.5em;">Soft skills  <em id="soft">-------</em>  Hard skills <em id="hard">-------</em></p>    
+
+  <div class="text-center" *ngIf="login">
+    <button type="button" class="btn btn-secondary btn-sm"  data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onNewSkill()">      
+
+      <a class="nav-link" style="color: white;">
+        Añadir  Skill <span class="sr-only">(current)</span>
+      </a>
+   </button>
+  </div>
+
+
+  <div fxLayout="row wrap" class="container">
+   <div fxFlex *ngFor="let skill of skillsLista; let i = index" >
+      <div class="grid-item" fxLayout="row" fxLayoutAlign="center center" >
+        <ng-container *ngIf="skill.habilidadTipo === 'HARD'">
+ 
+        <circle-progress
+        [percent]="skill.porcentaje"
+        [subtitle]="skill.area"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#04D9D9'"
+        [innerStrokeColor]= "'white'"
+        [animation]="true"
+        [animationDuration]="300"
+        [lazy]="true"
+        ></circle-progress>
+        
+          <button type="button" class="btn btn-success"  *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+         <button type="button" class="btn btn-danger" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+         
+       
+    
+     </ng-container>
+     
+    <ng-container *ngIf="skill.habilidadTipo === 'SOFT'">
+
+        <circle-progress
+        [percent]="skill.porcentaje"
+        [subtitle]="skill.area"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#F25050'"
+        [innerStrokeColor]= "'white'"
+        [animation]="true"
+        [animationDuration]="300"
+        [lazy]="true"
+        ></circle-progress>
+        
+          <button type="button" class="btn btn-success"  *ngIf="login" data-bs-toggle="modal" data-bs-target="#skillForm" (click)="onEditSkill(i)">Editar</button>
+         <button type="button" class="btn btn-danger" *ngIf="login" (click)="onDeleteSkill(i)">Borrar</button>
+         
+       
+    </ng-container>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+ 
+
+
+  <!--MODALES-->
+<div class="modal fade" id="skillForm" tabindex="-1" aria-labelledby="skillFormLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="skillFormLabel">Skills</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+          <input type="hidden" name="idskills" formControlName="idskills">
+
+          <div class="row mb-3">
+            <label for="area" class="col-sm-2 col-form-label">Nombre del skill:</label>
+            <div class="col-sm-10">
+              <input type="text" name="area" formControlName="area" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="porcentaje" class="col-sm-2 col-form-label">Porcentaje:</label>
+            <div class="col-sm-10">
+              <input type="number" name="porcentaje" formControlName="porcentaje" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="habilidadTipo" class="col-sm-2 col-form-label">Tipo de skill:</label>
+            <div class="col-sm-10">
+              <select  name="habilidadTipo" formControlName="habilidadTipo" class="form-control" required>
+             <option value="SOFT">SOFT</option>
+             <option value="HARD">HARD</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <p><i>"Recuerda que si se trata de una habilidad blanda corresponde </i><b>SOFT</b><i>, mientras que si se tratara de una habilidad dura </i> <b>HARD</b> "</p>
+            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+

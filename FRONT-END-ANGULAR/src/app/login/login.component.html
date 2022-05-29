@@ -1,0 +1,36 @@
+<div class="card m-5 p-5">
+  <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
+    <h2 style="text-align: center">Iniciar sesión</h2>
+
+    <div class="row mb-3">
+      <label for="username" class="col-sm-6 col-form-label">Nombre de usuario:</label>
+    <input type="text" formControlName="username" class="form-control" id="username" placeholder="Ingrese su nombre de usuario">
+    <div *ngIf="Username?.errors && Username?.touched">
+      <p *ngIf="Username?.hasError('required')" class="text-danger">
+        El nombre de usuario es requerido.
+      </p>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="password" class="col-sm-6 col-form-label">Contraseña:</label>
+    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+<div *ngIf="Password?.errors && Password?.touched">
+  <p *ngIf="Password?.hasError('required')" class="text-danger">
+    La contraseña es requerida.
+  </p>
+</div>
+    </div>
+
+<button class="btn btn-info" type="button"  routerLink="" >Volver </button> 
+<button class="btn btn-primary" type="submit" style="background-color: #005f60; border: #01402E; margin-left: 1.5em;">Iniciar sesión
+ </button>
+  </form>
+
+</div>
+
+  
+
+  
+
+  
