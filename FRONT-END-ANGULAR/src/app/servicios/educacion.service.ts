@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Educacion } from "../interfaces/educacion";
 
-//'https://api-arg-programa.herokuapp.com/educacion';
+
 
 
 
