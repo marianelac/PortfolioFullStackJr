@@ -1,29 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  
   font-family: "Poppins", sans-serif;
 }
-html{
-  scroll-behavior: smooth;
-}
 
-/*.example-card {
-    max-width: 50rem;
-    max-height: 27rem;
-    padding: 10px auto;
-    
-  } */
+
+
  .card{
     margin-bottom: 1.5rem;
     border-radius: 20px;
- } 
+    box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+    word-wrap: break-word;
+    line-height: normal;
+} 
   .main-image{
-      margin: 0;
+      margin: 0 0 1em 0;
       padding: 2em 1.5em 0;
       width:80vw;
-      height: 16vw; 
+      height: 25vw; 
       background-size: contain;
       
       
@@ -32,78 +26,54 @@ html{
   }
   
   .example-header-image {
-    /*background-image: url('https://i.imgur.com/x50TQcM.jpg'); */
-    background-size: cover;
+    background-size: contain;
     position: absolute;
-    top: 25%;
+    top: 31%;
     left: 42%;
   }
 .mat-card-avatar{
     width: 12vw;
     height: 12vw;
+    border-radius: 50%;
     border: solid #ffffff;
+    box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+    margin-bottom: 1em;
 }
-#bio{
-    
-    text-align: center;
+#usuario{
+    margin-top: 1em;
 }
-
-.gif{
-    background-image: url("https://media.giphy.com/media/483Vt9oo9efiEAIs1R/giphy.gif");
-    background-size: cover;
-    float: left;
-    margin: 2rem;
-}
-
-
-.flecha{
-    margin-left: 3.5rem;
-
-}
-#int{
-    display: block;
-    padding: 0 4rem;
-}
-
-
-
-
 
 
 @media(min-width: 768px) and (max-width:900px){
     .example-header-image {
         position: absolute;
-        top:25%
+        top:30%
+    }
+    .main-image{
+        width: 80vw;
+        height: 35vw;
     }
     .mat-card-avatar{
-        width: 17vw;
-        height: 17vw;
+        
+        width: 16vw;
+        height: 16vw;
     }
-    .gif{
-        margin: auto;
-        float: none;
-    }
-    #int{
-        padding: auto;
-        margin: auto;
-    }
+    
 } 
 
 @media(max-width:767px){
-    .flecha{
-        display: none;
-    }
+    
     .ap{
         padding: 0;
         margin: 0;
     }
     .example-header-image {
         position: absolute;
-        top:25%
+        top:15%
     }
     .mat-card-avatar{
-        width: 17vw;
-        height: 17vw;
+        width: 16vw;
+        height: 16vw;
     }
   
 }

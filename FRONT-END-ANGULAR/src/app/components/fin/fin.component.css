@@ -13,10 +13,12 @@
 
 
 footer{
-  color: #1F1C1C;
+  color: #f7f5f5;
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px -2px 5px rgb(190, 230, 80);
+  box-shadow: 2px -2px 5px rgb(156, 156, 156);
   opacity: 0.8;
+  border-radius: 10px;
+  
 }

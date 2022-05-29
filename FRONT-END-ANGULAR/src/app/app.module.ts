@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
-import { AcercaComponent } from './components/acerca/acerca.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
@@ -47,7 +46,6 @@ import { EncabezadoModalComponent } from './modal/encabezado-modal/encabezado-mo
     AppComponent,
     PortfolioComponent,
     EncabezadoComponent,
-    AcercaComponent,
     EducacionComponent,
     ExperienciaComponent,
     ProyectosComponent,
@@ -70,6 +68,9 @@ import { EncabezadoModalComponent } from './modal/encabezado-modal/encabezado-mo
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
+      titleColor: "white",
+      unitsColor: "white",
+      subtitleColor: "white"
     
     }),
     ReactiveFormsModule,

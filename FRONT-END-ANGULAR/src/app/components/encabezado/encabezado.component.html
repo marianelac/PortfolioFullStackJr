@@ -1,70 +1,31 @@
-<div class="container-lg d-flex m-5 p-3" > 
-   
-        <mat-card class="example-card" style="padding-top: 2rem; background-color: #E0FF4F; color: grey;" >
-          <!-- Probar link de la imagen https://acortar.link/hhmeVY   -->
-          <img mat-card-image class="main-image" [src]="persona.fotofondo" alt="fondo">
-          <img mat-card-avatar class="example-header-image" [src]="persona.fotoperfil" alt="fotodeperfil">
-       
-        
-              <div id="bio" style="padding-top: 5rem;" >
-                
-                <p>¡Hola! Me llamo: {{persona.nombres}} {{persona.apellido}}</p>
-                <p>Aspiro ser : {{persona.ocupacion}}</p>
-                <p>Resido en: {{persona.ubicacion}}</p>
-                <p class="ap" style="padding-top: 2rem;"> {{persona.acerca}}</p> 
-                <p>Sean bienvenidas a mi portfolio. ¡Empecemos el recorrido!</p>
-                  
-                <div id="int" >
-                  <img mat-card-avatar class="gif" >
-                  
-                </div>
-                <a
-                mat-raised-button
-                color="primary"
-                style="margin-left: 3.5rem; margin-top: .5rem;" [href]="persona.email"
-              > Enviar email <i class="fa-solid fa-envelope" style="font-size: 1.3rem; color: white"></i> </a>
-              <div class="recorrido" >
-                
-                <img
-              src="https://media.giphy.com/media/Rdod7XvXQjzCVpiDnR/giphy.gif"
-              width="160"
-              height="80"
-              class="flecha"
-            />
-            
-              </div>
 
 
-              </div>
-      <div *ngIf="login">        
-        <button class="icon edit btn btn-success"   (click)="abrirModal(persona.idpersona)" class="me-2">
-          <a alt="Editar" title="Editar">
-              <i class="bi bi-pencil-fill icons"></i>
-          </a>
-      </button>
-      </div>
-   </mat-card> 
-</div>  
-
-
-<div class="card text-center" style="background-color: #E0FF4F; color: grey;">
+<div class="card text-center" style="background-color: rgb(37, 34, 34); color: white;" *ngIf="persona">
   <div class="card-header">
-    <img mat-card-image class="main-image" src="https://imgur.com/a/y2fiG1x" alt="fondo">
-          <img mat-card-avatar class="example-header-image" src="../../../assets/chini.jpg" alt="fotodeperfil">
+    <img mat-card-image class="main-image" [src]="persona.fotofondo" alt="fondo">
+          <img mat-card-avatar class="example-header-image" [src]="persona.fotoperfil" alt="fotodeperfil">
        
   </div>
   <div class="card-body">
-    <h2 class="card-title" style="padding-top: 7rem"> ¡Hola! Me llamo: marianela gamarra</h2>
+    <p id="usuario">@{{persona.username}}</p>
+
+    <p class="card-title" style="padding-top: 0.5rem"> ¡Hola! Me llamo: {{persona.nombres}} {{persona.apellido}} </p>
     <div class="card-text">
-      <p>Aspiro ser : desarrolladora full stack jr</p>
-      <p>Resido en: la provincia de formosa</p>
-      <p > Soy:  estudiante de argentina programa</p> 
-      <p>Sean bienvenidas a mi portfolio. ¡Empecemos el recorrido!</p>
+      <p style="margin-bottom: 0">Profesión: {{persona.ocupacion}}</p> <br>
+      <p ><i class="fa-solid fa-location-dot"></i>  {{persona.ubicacion}}</p>
+      <p style="margin-bottom: 0; padding-top: 1em;"> Acerca de mi:</p><br>
+      <p> {{persona.acerca}}</p> <br>
+      <p>Sean bienvenidos a mi portfolio. ¡Empecemos el recorrido!</p>
     </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+   
+  </div>
+  <div *ngIf="login"> 
+  
+ <button class="btn btn-success" style=" border-radius: 50%;" (click)="abrirModal(persona.idpersona)"><i class="fa-solid fa-pencil" ></i></button>        
+   
+
   </div>
 </div>
        

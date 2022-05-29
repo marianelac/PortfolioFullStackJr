@@ -1,17 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-/*html, body{
-    background-image: url(./assets/Captura.png);
-    
-} */
-html, body { height: 100%;
- }
+
+
 body { margin: 0; font-family: Roboto,
  "Helvetica Neue", sans-serif; 
 
-background-image: url(./assets/photo1.jpg) ;
+background-image: url(./assets/pexels-pixabay-270873.jpg) ;
 background-size: cover;
-background-repeat: repeat-y;
-background-color: #AED12E
+/*background-repeat: repeat-y;
+background-color: #AED12E */
+margin:0%
 }
 
 

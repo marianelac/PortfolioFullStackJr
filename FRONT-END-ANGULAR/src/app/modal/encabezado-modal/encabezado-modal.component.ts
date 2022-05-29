@@ -25,7 +25,7 @@ export class EncabezadoModalComponent implements OnInit {
       fotoperfil:['',[Validators.required]],
       fotofondo:['',[Validators.required]],
       acerca:['', [Validators.required]],
-      username:[''],
+      username:['', [Validators.required]],
       password:[''],
       token:['']
     });

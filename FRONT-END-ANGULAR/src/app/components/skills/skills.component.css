@@ -6,16 +6,29 @@
   }
   
   .grid-item {
-    background-color: #fae0e4;
+    background-color: rgb(37, 34, 34);
     border-radius: 5px;
     padding: 5px;
     min-width: 5rem;
     height: 15rem;
-    margin: 5px;
+    margin: auto;
   }
 .row{
   display: flex;
 }
 .container-lg{
-  border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(245, 244, 244, 0.35) 0px 5px 15px; 
+
+}
+#soft{
+  background-color: #F25050;
+ 
+  color: #F25050;
+}
+
+#hard{
+  background-color: #04D9D9;
+
+  color: #04D9D9;
 }
