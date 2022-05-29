@@ -23,53 +23,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-mcg.web.app")
 @RestController
 @RequestMapping("/api/personas")
 public class PersonaController {
     @Autowired
     PersonaService personaservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<PersonaModel> getAll(){
-     * return personaservice.getAll();
-     * }
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity<PersonaModel> getById(@PathVariable(value="id") int
-     * id){
-     * return personaservice.getById(id);
-     * }
-     * 
-     * @PostMapping("/crear")
-     * public PersonaModel save(@Validated @RequestBody PersonaModel persona){
-     * return personaservice.save(persona);
-     * }
-     * 
-     * 
-     * 
-     * @PutMapping("/editar/{id}")
-     * public ResponseEntity<PersonaModel> update(@PathVariable(value="id")int
-     * id, @RequestBody PersonaModel persona){
-     * if (id == persona.getIdPersona()){
-     * PersonaModel nuevaPersona = personaservice.save(persona);
-     * return ResponseEntity.ok().body(nuevaPersona);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/borrar/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.personaservice.deleteUser(id);
-     * if (ok){
-     * return "Se eliminó la persona con id " + id;
-     * }else{
-     * return "No pudo eliminar a la persona con id" + id;
-     * }
-     * }
-     */
+   
     @GetMapping("/lista")
     public ArrayList<PersonaModel> obtenerPersonas() {
         return personaservice.obtenerPersonas();

@@ -16,33 +16,7 @@ public class EducacionService {
     @Autowired
     EducacionRepository educaRepo;
 
-    /*public List<EducacionModel> getAll(){
-        return (List<EducacionModel>)eduRepo.findAll();
-    }
-
-
-    public ResponseEntity<EducacionModel> getById(int id){
-        Optional<EducacionModel> edu = eduRepo.findById(id);
-        if(edu.isPresent()){
-            return ResponseEntity.ok().body(edu.get());
-        } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    
-    public EducacionModel save (EducacionModel edu){
-        return eduRepo.save(edu);
-    }
-
-    public boolean deleteEducacion(Integer id) {
-        try{
-            eduRepo.deleteById(id);
-            return true;
-        }catch(Exception err){
-            return false;
-        }
-    } */
+  
 
     public ArrayList<EducacionModel>obtenerEducacion(){
         return (ArrayList<EducacionModel>) educaRepo.findAll();

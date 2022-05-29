@@ -16,32 +16,7 @@ public class ProyectosService {
     @Autowired
     ProyectosRepository proyectosRepo;
 
-    /*public List<ProyectosModel> getAll(){
-        return (List<ProyectosModel>)proyectosRepo.findAll();
-    }
-
-    public ResponseEntity<ProyectosModel> getById(int id){
-        Optional<ProyectosModel> proyecto = proyectosRepo.findById(id);
-        if(proyecto.isPresent()){
-            return ResponseEntity.ok().body(proyecto.get());
-        } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-
-    public ProyectosModel save (ProyectosModel proyecto){
-        return proyectosRepo.save(proyecto);
-    }
-
-    public boolean deleteProyecto(Integer id) {
-        try{
-            proyectosRepo.deleteById(id);
-            return true;
-        }catch(Exception err){
-            return false;
-        }
-    } */
+   
 
     public ArrayList<ProyectosModel> obtenerProyecto(){
         return (ArrayList<ProyectosModel>) proyectosRepo.findAll();

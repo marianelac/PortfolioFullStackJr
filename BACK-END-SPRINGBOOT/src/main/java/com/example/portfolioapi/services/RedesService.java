@@ -17,31 +17,7 @@ public class RedesService {
     RedesRepository redesRepo;
 
     
-   /* public List<RedesModel> getAll(){
-        return (List<RedesModel>)redesRepo.findAll();
-    }
 
-    public ResponseEntity<RedesModel> getById(int id){
-        Optional<RedesModel> red = redesRepo.findById(id);
-        if(red.isPresent()){
-            return ResponseEntity.ok().body(red.get());
-        } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    public RedesModel save (RedesModel red){
-        return redesRepo.save(red);
-    }
-
-    public boolean deleteRed(Integer id) {
-        try{
-            redesRepo.deleteById(id);
-            return true;
-        }catch(Exception err){
-            return false;
-        }
-    } */
     public ArrayList<RedesModel> obtenerRedes(){
         return (ArrayList<RedesModel>) redesRepo.findAll();
     }

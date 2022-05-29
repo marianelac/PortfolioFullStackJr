@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-mcg.web.app")
 @RestController
 @RequestMapping("/api/skills")
 public class SkillsController {
@@ -30,45 +30,7 @@ public class SkillsController {
     @Autowired
     SkillsService skillservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<SkillsModel> getAll(){
-     * return skillservice.getAll();
-     * }
-     * 
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity<SkillsModel> getById(@PathVariable(value="id") int id){
-     * return skillservice.getById(id);
-     * }
-     * 
-     * @PostMapping
-     * public SkillsModel save(@Validated @RequestBody SkillsModel skill){
-     * return skillservice.save(skill);
-     * }
-     * 
-     * 
-     * @PutMapping("/{id}")
-     * public ResponseEntity<SkillsModel> update(@PathVariable(value="id")int
-     * id, @RequestBody SkillsModel skill){
-     * if (id== skill.getIdSkills()){
-     * SkillsModel nuevaSkill = skillservice.save(skill);
-     * return ResponseEntity.ok().body(nuevaSkill);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.skillservice.deleteSkill(id);
-     * if (ok){
-     * return "Se eliminó skill con id " + id;
-     * }else{
-     * return "No pudo eliminar skill con id" + id;
-     * }
-     * }
-     */
+   
 
     @GetMapping("/lista")
     public ArrayList<SkillsModel> obtenerSkills() {

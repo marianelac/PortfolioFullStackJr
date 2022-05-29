@@ -22,53 +22,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-mcg.web.app")
 @RestController
 @RequestMapping("/api/educacion")
 public class EducacionController {
     @Autowired
     EducacionService educaservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<EducacionModel> getAll(){
-     * return eduservice.getAll();
-     * }
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity <EducacionModel> getById(@PathVariable(value="id") int
-     * id){
-     * return eduservice.getById(id);
-     * }
-     * 
-     * @PostMapping("/crear")
-     * public EducacionModel save(@Validated @RequestBody EducacionModel edu){
-     * return eduservice.save(edu);
-     * }
-     * 
-     * 
-     * 
-     * @PutMapping("/editar/{id}")
-     * public ResponseEntity<EducacionModel> update(@PathVariable(value="id")int
-     * id, @RequestBody EducacionModel edu){
-     * if (id== edu.getIdEducacion()){
-     * EducacionModel nuevaEducacion = eduservice.save(edu);
-     * return ResponseEntity.ok().body(nuevaEducacion);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/borrar/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.eduservice.deleteEducacion(id);
-     * if (ok){
-     * return "Se eliminó educación con id " + id;
-     * }else{
-     * return "No pudo eliminar educación con id" + id;
-     * }
-     * }
-     */
+    
 
     @GetMapping("/lista")
     public ArrayList<EducacionModel> obtenerEducacion() {

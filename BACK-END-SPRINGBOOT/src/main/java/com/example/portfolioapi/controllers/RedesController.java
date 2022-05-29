@@ -22,52 +22,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-mcg.web.app")
 @RestController
 @RequestMapping("/api/redes")
 public class RedesController {
     @Autowired
     RedesService redservice;
 
-    /*
-     * @GetMapping("/lista")
-     * public List<RedesModel> getAll(){
-     * return redservice.getAll();
-     * }
-     * 
-     * 
-     * @GetMapping("/{id}")
-     * public ResponseEntity<RedesModel> getById(@PathVariable(value="id") int id){
-     * return redservice.getById(id);
-     * }
-     * 
-     * @PostMapping("/crear")
-     * public RedesModel save(@Validated @RequestBody RedesModel red){
-     * return redservice.save(red);
-     * }
-     * 
-     * 
-     * @PutMapping("/editar/{id}")
-     * public ResponseEntity<RedesModel> update(@PathVariable(value="id")int
-     * id, @RequestBody RedesModel red){
-     * if (id== red.getIdRedes()){
-     * RedesModel nuevaRed = redservice.save(red);
-     * return ResponseEntity.ok().body(nuevaRed);
-     * }else{
-     * return ResponseEntity.badRequest().build();
-     * }
-     * }
-     * 
-     * @DeleteMapping( path = "/borrar/{id}")
-     * public String deleteById(@PathVariable("id") Integer id){
-     * boolean ok = this.redservice.deleteRed(id);
-     * if (ok){
-     * return "Se eliminó red con id " + id;
-     * }else{
-     * return "No pudo eliminar red con id" + id;
-     * }
-     * }
-     */
     @GetMapping("/lista")
     public ArrayList<RedesModel> obtenerRedes() {
         return redservice.obtenerRedes();

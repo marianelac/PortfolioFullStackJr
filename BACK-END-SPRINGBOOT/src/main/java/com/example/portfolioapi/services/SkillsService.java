@@ -16,31 +16,7 @@ public class SkillsService {
     @Autowired
     SkillsRepository skillsRepo;
 
-    /*public List<SkillsModel> getAll(){
-        return (List<SkillsModel>)skillsRepo.findAll();
-    }
-
-    public ResponseEntity<SkillsModel> getById(int id){
-        Optional<SkillsModel> skill = skillsRepo.findById(id);
-        if(skill.isPresent()){
-            return ResponseEntity.ok().body(skill.get());
-        } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    public SkillsModel save (SkillsModel skill){
-        return skillsRepo.save(skill);
-    }
-
-    public boolean deleteSkill(Integer id) {
-        try{
-            skillsRepo.deleteById(id);
-            return true;
-        }catch(Exception err){
-            return false;
-        }
-    } */
+ 
 
     public ArrayList<SkillsModel> obtenerSkills(){
         return (ArrayList<SkillsModel>) skillsRepo.findAll();

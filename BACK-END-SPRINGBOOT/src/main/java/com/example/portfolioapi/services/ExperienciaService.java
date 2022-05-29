@@ -16,32 +16,7 @@ public class ExperienciaService {
     @Autowired
     ExperienciaRepository expeRepo;
 
-   /* public List<ExperienciaModel> getAll(){
-        return (List<ExperienciaModel>)expeRepo.findAll();
-    }
-
-    public ResponseEntity<ExperienciaModel> getById(int id){
-        Optional<ExperienciaModel> experiencia = expeRepo.findById(id);
-        if(experiencia.isPresent()){
-            return ResponseEntity.ok().body(experiencia.get());
-        } else{
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    
-    public ExperienciaModel save (ExperienciaModel experiencia){
-        return expeRepo.save(experiencia);
-    }
-
-    public boolean deleteExperiencia(Integer id) {
-        try{
-            expeRepo.deleteById(id);
-            return true;
-        }catch(Exception err){
-            return false;
-        }
-    } */
+   
 
     public ArrayList<ExperienciaModel> obtenerExperiencia(){
         return (ArrayList<ExperienciaModel>) expeRepo.findAll();
